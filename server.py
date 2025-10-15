@@ -1,6 +1,7 @@
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer 
 import nltk
+nltk.download('punkt_tab') 
 nltk.download('punkt')
 from nltk.tokenize import word_tokenize
 nltk.download('stopwords')

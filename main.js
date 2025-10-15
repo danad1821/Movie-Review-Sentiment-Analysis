@@ -51,6 +51,7 @@ checkReviewBtn.addEventListener("click", async () => {
     const endTime = performance.now(); // End timer
     const timeTaken = Math.round(endTime - startTime); // Calculate time in ms
     showPopup(result.sentiment, timeTaken);
+    review = "";
   } catch (error) {
     alert(
       `Failed to fetch sentiment: ${error.message}. Check the server logs (500 error) and CORS policy.`
