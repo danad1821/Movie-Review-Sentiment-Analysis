@@ -1,13 +1,14 @@
+import os
+import nltk
+# Tell NLTK where to look for data (assuming you use the recommended Build Command)
+nltk.data.path.append('/opt/render/nltk_data')
+
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer 
-import nltk
-nltk.download('punkt')
+# Note: Since we're using a pre-downloaded path, we don't need nltk.download() here anymore
 from nltk.tokenize import word_tokenize
-nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer 
-nltk.download('wordnet') 
-nltk.download('omw-1.4')
 
 lemmatizer = WordNetLemmatizer() 
 stop_words = set(stopwords.words('english'))
@@ -52,6 +53,6 @@ def get_sentiment():
     
     return jsonify({"sentiment": result, "status": "success"})
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
-    
+# Comment out the development-only run block for Gunicorn deployment
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5000, debug=True)
