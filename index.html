@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Review Sentiment Analysis</title>
-</head>
-<body>
-    <h1>Movie Review Sentiment Analysis</h1>
-    <section>
-        <h2>Put a review to check if its positive or negative:</h2>
-        <textarea name="review" id="review"></textarea>
-        <button id="checkReviewBtn">Check</button>
-    </section>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="bg-blue-500 text-white p-4 text-lg">
+      <h1 class="align-center font-bold text-2xl">
+        Movie Review Sentiment Analysis
+      </h1>
+    </header>
+    <main class="flex flex-col items-center justify-center">
+      <h2 class="text-xl mb-4">
+        Put a review to check if its positive or negative:
+      </h2>
+      <textarea
+        name="review"
+        id="review"
+        class="border border-black w-1/2 m-2 p-2 rounded-lg"
+        placeholder="Type review here..."
+      ></textarea>
+      <button
+        class="bg-blue-500 text-white px-3 py-2 rounded-lg m-1 hover:bg-blue-700"
+        id="checkReviewBtn"
+      >
+        Check
+      </button>
+    </main>
+    <footer class="bg-blue-500 text-white p-4">
+      <p>Done by Dana Dabdoub</p>
+    </footer>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

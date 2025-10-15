@@ -17,6 +17,13 @@ filename = 'movie_review_sentiment_model.pkl'
 with open(filename, 'rb') as file:
     loaded_model = pickle.load(file)
     
+vectorizer_filename = 'tfidf_vectorizer.pkl' # Assuming you saved it as this
+try:
+    with open(vectorizer_filename, 'rb') as file:
+        tfidf_vectorizer = pickle.load(file)
+except FileNotFoundError:
+    print(f"Error: Could not find {vectorizer_filename}.")
+    
 def process_input(text):
     processed_text = word_tokenize(text)
     processed_text = [lemmatizer.lemmatize(token) for token in processed_text]
