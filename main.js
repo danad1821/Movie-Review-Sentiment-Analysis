@@ -33,7 +33,7 @@ checkReviewBtn.addEventListener("click", async () => {
   checkReviewBtn.disabled = true;
 
   try {
-    let response = await fetch("http://192.168.1.103:5000/get_sentiment", {
+    let response = await fetch("https://movie-review-sentiment-analysis-7cea.onrender.com/get_sentiment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
