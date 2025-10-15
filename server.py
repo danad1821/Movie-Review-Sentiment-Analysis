@@ -1,14 +1,13 @@
-import os
-import nltk
-# Tell NLTK where to look for data (assuming you use the recommended Build Command)
-nltk.data.path.append('/opt/render/nltk_data')
-
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer 
-# Note: Since we're using a pre-downloaded path, we don't need nltk.download() here anymore
+import nltk
+nltk.download('punkt')
 from nltk.tokenize import word_tokenize
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer 
+nltk.download('wordnet') 
+nltk.download('omw-1.4')
 
 lemmatizer = WordNetLemmatizer() 
 stop_words = set(stopwords.words('english'))
