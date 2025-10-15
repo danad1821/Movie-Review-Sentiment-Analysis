@@ -36,32 +36,38 @@
         </button>
       </div>
     </main>
-    <div
-      class="relative bg-white text-gray-800 p-8 rounded-2xl shadow-2xl z-20 mx-auto mt-20 max-w-sm w-11/12"
-    >
-      <button
-        id="closePopupBtn"
-        class="absolute top-2 right-4 text-3xl font-light text-gray-400 hover:text-red-500 transition"
+    <section id="resultPopup" class="fixed inset-0 hidden z-50">
+      <div
+        id="underlay"
+        class="absolute inset-0 bg-gray-900 opacity-50"
         onclick="closePopup()"
+      ></div>
+
+      <div
+        class="relative bg-white text-gray-800 p-6 rounded-xl shadow-2xl z-20 mx-auto mt-20 max-w-lg"
       >
-        &times;
-      </button>
+        <button
+          id="closePopupBtn"
+          class="absolute top-2 right-4 text-xl font-bold text-gray-500 hover:text-red-500"
+          onclick="closePopup()"
+        >
+          &times;
+        </button>
 
-      <h2
-        class="text-3xl font-extrabold border-b border-gray-200 pb-3 mb-4 text-center"
-      >
-        Sentiment Result
-      </h2>
+        <h2 class="text-2xl font-semibold border-b pb-2 mb-4">
+          Sentiment Result
+        </h2>
 
-      <p class="text-2xl mb-4 text-center">
-        Result:
-        <span id="sentimentResult" class="font-extrabold"></span>
-      </p>
+        <p class="text-xl mb-2">
+          Result:
+          <span id="sentimentResult" class="font-bold text-green-600"></span>
+        </p>
 
-      <p class="text-sm text-gray-500 text-center pt-2 border-t">
-        Time taken: <span id="timeTaken" class="font-medium"></span>ms
-      </p>
-    </div>
+        <p class="text-sm text-gray-500">
+          Time taken to obtain result: <span id="timeTaken"></span>ms
+        </p>
+      </div>
+    </section>
     <footer class="bg-gray-800 text-white p-3 text-sm">
       <p class="text-center">Done by Dana Dabdoub</p>
     </footer>
